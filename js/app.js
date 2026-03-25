@@ -61,7 +61,7 @@ class AppRouter {
 
         if (mobileMenuBtn && sidebar) {
             mobileMenuBtn.addEventListener('click', () => {
-                sidebar.classList.add('open');
+                sidebar.classList.toggle('open');
             });
         }
 

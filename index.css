@@ -114,8 +114,16 @@ a {
     display: flex;
     flex-direction: column;
     padding: 24px 0;
-    z-index: 10;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    position: fixed;
+    left: -280px; /* Hidden by default on all platforms */
+    top: 0;
+    bottom: 0;
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar.open {
+    left: 0 !important;
 }
 
 .sidebar-header {
@@ -270,6 +278,7 @@ a {
 
 .top-header {
     height: var(--header-height);
+    width: 100%;
     padding: 0 40px;
     display: flex;
     align-items: center;
@@ -278,6 +287,9 @@ a {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-bottom: var(--border-glass);
+    position: sticky;
+    top: 0;
+    z-index: 500;
 }
 
 .header-search {
@@ -435,7 +447,7 @@ a {
         left: 0;
         right: 0;
         padding: 0 15px;
-        z-index: 20;
+        z-index: 500;
         display: flex;
         align-items: center;
         justify-content: space-between;
