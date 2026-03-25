@@ -239,8 +239,6 @@ Current mode: {{MODE}}`;
                     ${this.messages.length === 0 ? this.renderWelcome() : this.messages.map(m => this.renderMessage(m)).join('')}
                 </div>
 
-                </div>
-
                 <!-- Input Area -->
                 <div class="tutor-input-area" style="position: relative; z-index: 100;">
                     <div class="tutor-input-row" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);">
