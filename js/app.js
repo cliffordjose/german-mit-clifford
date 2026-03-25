@@ -161,7 +161,8 @@ class AppRouter {
         const globalTitle = document.getElementById('global-feature-title');
         const isAITutor = (location.hash === '#/ai-tutor');
         if (globalTitle) {
-            globalTitle.style.display = 'none'; // Hide header title for AI Tutor as requested
+            const isDesktop = window.innerWidth > 900;
+            globalTitle.style.display = (isAITutor && isDesktop) ? 'flex' : 'none';
         }
 
         
