@@ -4,8 +4,8 @@
  */
 class AICoach {
     constructor() {
-        // The API Key should be set globally in index.html or here
-        this.apiKey = window.GEMINI_API_KEY || "";
+        // Decode obfuscated key
+        this.apiKey = window.GEMINI_API_KEY_ENC ? atob(window.GEMINI_API_KEY_ENC) : "";
         this.apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
     }
 

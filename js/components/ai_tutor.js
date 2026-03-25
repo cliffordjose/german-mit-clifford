@@ -94,12 +94,14 @@ Current mode: {{MODE}}`;
             .ai-tutor-wrapper { 
                 display: flex; 
                 flex-direction: column; 
-                gap: 24px; 
+                gap: 0; 
                 animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1); 
                 max-width: 1400px; 
                 margin: 0 auto; 
-                height: 100%; 
+                height: calc(100vh - 160px); 
+                padding-top: 5px;
                 background: transparent;
+                overflow: hidden;
             }
             .tutor-header { 
                 border-radius: var(--border-radius); 
@@ -129,87 +131,95 @@ Current mode: {{MODE}}`;
             .tutor-mode-btn:hover { background: rgba(255,255,255,0.1); color: white; transform: translateY(-2px); }
             .tutor-mode-btn.active { background: var(--gradient-gold); border-color: transparent; color: #000; box-shadow: 0 10px 20px rgba(255, 211, 42, 0.3); }
 
-            .tutor-messages-area { flex: 1; overflow-y: auto; padding: 32px; display: flex; flex-direction: column; gap: 24px; scroll-behavior: smooth; }
+            .tutor-messages-area { flex: 1; min-height: 0; overflow-y: auto; padding: 32px; display: flex; flex-direction: column; gap: 24px; scroll-behavior: smooth; }
             .tutor-messages-area::-webkit-scrollbar { width: 8px; }
             .tutor-messages-area::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 10px; }
 
-            .tutor-welcome { text-align: center; margin: auto; max-width: 500px; padding: 60px 24px; animation: fadeIn 1s ease; }
-            .tutor-welcome-icon { font-size: 80px; background: var(--gradient-brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 24px; filter: drop-shadow(0 10px 20px rgba(255, 107, 18, 0.3)); }
-            .tutor-welcome h3 { font-size: 32px; margin-bottom: 12px; font-weight: 800; color: white; }
-            .tutor-welcome p { color: var(--text-secondary); line-height: 1.6; font-size: 17px; }
+            .tutor-welcome { text-align: center; margin: auto; max-width: 500px; padding: 40px 24px; animation: fadeIn 1s ease; }
+            .tutor-welcome-icon { font-size: 64px; background: var(--gradient-brand); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; filter: drop-shadow(0 10px 20px rgba(255, 107, 18, 0.3)); }
+            .tutor-welcome h3 { font-size: 26px; margin-bottom: 12px; font-weight: 800; color: white; }
+            .tutor-welcome p { color: var(--text-secondary); line-height: 1.6; font-size: 16px; }
 
-            .tutor-msg { display: flex; gap: 16px; align-items: flex-end; max-width: 90%; animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+            .tutor-msg { display: flex; gap: 12px; align-items: flex-end; max-width: 90%; animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
             @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
             .tutor-msg-user { align-self: flex-end; justify-content: flex-end; }
             .tutor-msg-ai { align-self: flex-start; }
-            .tutor-msg-avatar { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+            .tutor-msg-avatar { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
             .tutor-msg-ai .tutor-msg-avatar { background: var(--gradient-brand); color: #fff; }
             .user-avatar-msg { background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); color: white; border: 1px solid rgba(255,255,255,0.1); }
 
-            .tutor-msg-bubble { padding: 18px 24px; border-radius: 24px; font-size: 16px; line-height: 1.7; position: relative; backdrop-filter: blur(10px); }
+            .tutor-msg-bubble { padding: 16px 20px; border-radius: 20px; font-size: 15px; line-height: 1.7; position: relative; backdrop-filter: blur(10px); }
             .tutor-msg-ai .tutor-msg-bubble { background: rgba(255,255,255,0.06); color: white; border-bottom-left-radius: 6px; border: var(--border-glass); }
             .tutor-msg-user .tutor-msg-bubble { background: var(--gradient-brand); color: #fff; border-bottom-right-radius: 6px; box-shadow: 0 10px 25px rgba(255, 107, 18, 0.3); }
 
-            .tutor-msg-time { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 10px; text-align: right; font-weight: 600; }
+            .tutor-msg-time { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 8px; text-align: right; font-weight: 600; }
             .tutor-msg-ai .tutor-msg-time { color: var(--text-muted); }
 
             .inline-code { background: rgba(255,211,42,0.15); padding: 4px 8px; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--accent-gold); border: 1px solid rgba(255,211,42,0.2); }
 
-            .tutor-starters { padding: 0 32px 24px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
-            .tutor-starter-chip { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary); padding: 10px 20px; border-radius: 100px; font-size: 14px; cursor: pointer; transition: all 0.3s ease; white-space: normal; }
+            .tutor-starters { padding: 0 24px 20px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+            .tutor-starter-chip { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary); padding: 8px 16px; border-radius: 100px; font-size: 13px; cursor: pointer; transition: all 0.3s ease; white-space: normal; text-align: center; }
             .tutor-starter-chip:hover { border-color: var(--accent-gold); color: white; background: rgba(255, 211, 42, 0.1); transform: translateY(-2px); }
 
-            .tutor-input-area { padding: 24px 32px; border-top: var(--border-glass); background: rgba(10, 10, 15, 0.4); backdrop-filter: blur(20px); }
-            .tutor-input-row { display: flex; gap: 16px; align-items: flex-end; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 8px 8px 8px 20px; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+            .tutor-input-area { padding: 16px 24px; border-top: var(--border-glass); background: rgba(10, 10, 15, 0.4); backdrop-filter: blur(20px); flex-shrink: 0; }
+            .tutor-input-row { display: flex; gap: 12px; align-items: flex-end; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 6px 6px 6px 18px; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
             .tutor-input-row:focus-within { border-color: var(--accent-gold); background: rgba(255,255,255,0.08); box-shadow: 0 0 30px rgba(255, 211, 42, 0.1); }
 
-            .tutor-textarea { flex: 1; background: transparent; border: none; color: white; font-family: inherit; font-size: 16px; resize: none; padding: 14px 0; outline: none; max-height: 150px; line-height: 1.6; }
+            .tutor-textarea { flex: 1; background: transparent; border: none; color: white; font-family: inherit; font-size: 15px; resize: none; padding: 12px 0; outline: none; max-height: 120px; line-height: 1.6; }
             .tutor-textarea::placeholder { color: var(--text-muted); }
 
-            .tutor-send-btn { background: var(--gradient-brand); color: #fff; border: none; width: 52px; height: 52px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 24px; cursor: pointer; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); flex-shrink: 0; box-shadow: 0 8px 20px rgba(255, 107, 18, 0.3); }
+            .tutor-send-btn { background: var(--gradient-brand); color: #fff; border: none; width: 46px; height: 46px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 22px; cursor: pointer; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); flex-shrink: 0; box-shadow: 0 8px 20px rgba(255, 107, 18, 0.3); }
             .tutor-send-btn:hover { transform: scale(1.1) rotate(5deg); box-shadow: 0 12px 30px rgba(255, 71, 87, 0.4); }
             .tutor-send-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
             
-            .tutor-mic-btn { background: rgba(255,255,255,0.08); color: var(--text-secondary); border: 1px solid rgba(255,255,255,0.1); width: 52px; height: 52px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 24px; cursor: pointer; transition: all 0.3s; flex-shrink: 0; }
+            .tutor-mic-btn { background: rgba(255,255,255,0.08); color: var(--text-secondary); border: 1px solid rgba(255,255,255,0.1); width: 46px; height: 46px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 22px; cursor: pointer; transition: all 0.3s; flex-shrink: 0; }
             .tutor-mic-btn:hover { background: rgba(255,255,255,0.15); color: white; transform: scale(1.05); }
             .tutor-mic-btn.listening { background: rgba(255, 71, 87, 0.15); color: var(--accent-red); border-color: var(--accent-red); animation: micPulse 1.5s infinite; }
+            @keyframes micPulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(255,71,87,0.4); } 50% { box-shadow: 0 0 0 10px rgba(255,71,87,0); } }
 
-            .tutor-input-hint { display: flex; justify-content: space-between; padding: 14px 8px 0; font-size: 13px; color: var(--text-muted); font-weight: 500; }
+            .tutor-input-hint { display: flex; justify-content: space-between; padding: 10px 8px 0; font-size: 12px; color: var(--text-muted); font-weight: 500; }
             kbd { background: rgba(255,255,255,0.15); padding: 3px 8px; border-radius: 6px; border-bottom: 2px solid rgba(255,255,255,0.2); font-family: inherit; font-size: 11px; color: white; }
 
-            @media (max-width: 768px) {
-                .ai-tutor-wrapper { gap: 16px; padding: 0; }
-                .tutor-header { border-radius: 0; border-top: none; border-left: none; border-right: none; padding: 20px; }
-                .tutor-messages-area { padding: 20px; gap: 16px; }
-                .tutor-msg { max-width: 95%; }
-                .tutor-msg-avatar { width: 32px; height: 32px; font-size: 18px; }
-                .tutor-msg-bubble { padding: 14px 18px; font-size: 15px; }
-                .tutor-input-area { padding: 16px; }
-                .tutor-input-row { gap: 8px; padding-left: 16px; }
-                .tutor-textarea { font-size: 15px; }
-                .tutor-send-btn, .tutor-mic-btn { width: 44px; height: 44px; font-size: 20px; border-radius: 12px; }
-            }
-            .ai-tutor-wrapper { 
-                padding-top: 5px; 
-                height: calc(100vh - 100px); 
-                display: flex; 
-                flex-direction: column; 
-            }
+            /* Typing indicator dots */
+            .typing-bubble { display: flex; gap: 6px; align-items: center; padding: 16px 24px !important; }
+            .typing-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--text-secondary); animation: typingBounce 1.4s infinite ease-in-out; }
+            .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+            .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+            @keyframes typingBounce { 0%, 60%, 100% { transform: translateY(0); opacity: 0.4; } 30% { transform: translateY(-8px); opacity: 1; } }
+
             .tutor-chat-card {
-                height: 100% !important;
-                min-height: 450px !important;
+                flex: 1;
+                min-height: 0;
                 display: flex;
                 flex-direction: column;
                 border-radius: var(--border-radius);
+                overflow: hidden;
+            }
+
+            @media (max-width: 768px) {
+                .ai-tutor-wrapper { gap: 0; padding: 0; height: calc(100vh - 140px); }
+                .tutor-header { border-radius: 0; border-top: none; border-left: none; border-right: none; padding: 16px; }
+                .tutor-messages-area { padding: 16px; gap: 14px; }
+                .tutor-msg { max-width: 95%; gap: 8px; }
+                .tutor-msg-avatar { width: 30px; height: 30px; font-size: 16px; }
+                .tutor-msg-bubble { padding: 12px 16px; font-size: 14px; border-radius: 16px; }
+                .tutor-input-area { padding: 12px 14px; }
+                .tutor-input-row { gap: 8px; padding-left: 14px; padding: 4px 4px 4px 14px; }
+                .tutor-textarea { font-size: 14px; padding: 10px 0; }
+                .tutor-send-btn, .tutor-mic-btn { width: 40px; height: 40px; font-size: 18px; border-radius: 12px; }
+                .tutor-welcome-icon { font-size: 48px; }
+                .tutor-welcome h3 { font-size: 22px !important; }
+                .tutor-welcome p { font-size: 14px !important; }
+                .tutor-welcome { padding: 24px 16px; }
+                .tutor-starters { padding: 0 14px 14px; gap: 8px; }
+                .tutor-starter-chip { padding: 7px 12px; font-size: 12px; }
+                .tutor-input-hint { padding: 6px 4px 0; font-size: 11px; }
+                .tutor-input-hint kbd { display: none; }
             }
             
             @media (max-width: 600px) {
-                .ai-tutor-wrapper { padding-top: 0; height: calc(100vh - 90px); }
-                .tutor-messages-area { padding: 16px 12px; gap: 16px; }
-                .tutor-message { max-width: 90%; font-size: 14px; padding: 12px 16px; }
-                .tutor-input-container { padding: 12px 16px; margin-top: 10px; }
-                .tutor-input-controls { padding: 8px 12px; }
-                .tutor-send-btn, .tutor-mic-btn { width: 44px; height: 44px; font-size: 20px; border-radius: 12px; }
+                .ai-tutor-wrapper { padding-top: 0; height: calc(100vh - 140px); }
+                .tutor-chat-card { border-radius: 0 !important; }
             }
         </style>
         <div class="ai-tutor-wrapper fade-in">
@@ -386,7 +396,8 @@ Current mode: {{MODE}}`;
         if (window.speechSynthesis) window.speechSynthesis.cancel();
 
         try {
-            const apiKey = window.GROQ_API_KEY;
+            // Decode obfuscated key
+            const apiKey = window.GROQ_API_KEY_ENC ? atob(window.GROQ_API_KEY_ENC) : null;
             if (!apiKey) throw new Error("API Key missing");
 
             const apiUrl = 'https://api.groq.com/openai/v1/chat/completions';
@@ -402,7 +413,7 @@ Current mode: {{MODE}}`;
             const payload = {
                 model: 'llama-3.3-70b-versatile',
                 messages: groqMessages,
-                max_tokens: 1000,
+                max_tokens: 1200,
                 temperature: 0.7
             };
 
@@ -416,7 +427,7 @@ Current mode: {{MODE}}`;
             });
 
             if (!response.ok) {
-                const errData = await response.json();
+                const errData = await response.json().catch(() => ({}));
                 console.error("Groq API Error:", errData);
                 if (response.status === 429) {
                     throw new Error("RATE_LIMIT");
@@ -450,8 +461,10 @@ Current mode: {{MODE}}`;
             let responseContent;
             if (err.message === "RATE_LIMIT") {
                 responseContent = "🤖 *(Simulated Response)* Hallo! Dein Groq API-Limit wurde erreicht, aber das Interface funktioniert einwandfrei! Ich bin Clifford und freue mich, dir zu helfen. Bitte warte einen Moment.";
+            } else if (err.message === "API Key missing") {
+                responseContent = '⚠️ Groq API Key is not set. Please add your API key in index.html to enable the AI Tutor.';
             } else {
-                responseContent = '⚠️ Connection error. Please check your internet connection and API Key.';
+                responseContent = '⚠️ Connection error. Please check your internet connection and try again.';
             }
 
             this.messages.push({

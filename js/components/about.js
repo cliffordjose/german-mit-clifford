@@ -27,9 +27,14 @@ class AboutView {
                 }
 
                 @media (max-width: 600px) {
-                    .founder-name { font-size: 28px; }
+                    .founder-name { font-size: 22px; line-height: 1.2; word-break: break-word; }
+                    .founder-title { font-size: 13px; letter-spacing: 2px; margin-bottom: 16px; }
                     .founder-bio { font-size: 15px; line-height: 1.6; }
                     .format-dedication { padding: 32px 20px !important; }
+                }
+                @media (max-width: 400px) {
+                    .founder-name { font-size: 19px; }
+                    .founder-title { font-size: 12px; letter-spacing: 1.5px; }
                 }
             </style>
             <div class="page-header fade-in">
