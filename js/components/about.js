@@ -77,7 +77,7 @@ class AboutView {
                     <h3 style="font-size: 28px; color: var(--text-primary); margin-bottom: 8px; font-family: var(--font-heading); font-weight: 800;">In Loving Memory</h3>
                     <h4 style="font-size: 16px; color: var(--accent-red); margin-bottom: 32px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700;">Abhishek Nandhakumar</h4>
                     <p style="font-size: 17px; color: var(--text-secondary); line-height: 1.8; max-width: 800px; margin: 0 auto; font-style: italic; opacity: 0.9;">
-                        "Clifford AI Tutor is dedicated to the memory of my brother and dearest friend, Abhishek Nandhakumar. He had a profound dream to master the German language and build a life in Germany—a dream cut tragically short. This AI-powered platform lives on as a tribute, opening doors for others to achieve the goals he once held so dear through advanced technological tutelage."
+                        "German mit Clifford is dedicated to the memory of my brother and dearest friend, Abhishek Nandhakumar. He had a profound dream to master the German language and build a life in Germany—a dream cut tragically short. This application lives on as a tribute to his legacy, opening doors for others to achieve the goals he once held so dear through advanced technological tutelage."
                     </p>
                 </div>
 

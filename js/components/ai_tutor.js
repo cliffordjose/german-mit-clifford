@@ -274,7 +274,7 @@ Current mode: {{MODE}}`;
                 <div class="tutor-welcome-icon">
                     <i class='bx bx-bot'></i>
                 </div>
-                <h3>Hallo! Ich bin Clifford AI Tutor 👋</h3>
+                <h3>Hallo! Ich bin German mit Clifford 👋</h3>
                 <p>Your AI German tutor. How can I help you today?</p>
             </div>
             `;
