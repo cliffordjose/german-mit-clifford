@@ -209,15 +209,13 @@ class AppRouter {
             }
 
         } else {
-            // Hide components if logged out
+            // Hide private header items if logged out
             const headerActions = document.querySelector('.header-actions');
             if (headerActions) headerActions.style.display = 'none';
 
+            // Sidebar and navigation should remain structurally available for About Us and mobile access
             const sidebar = document.querySelector('.sidebar');
-            if (sidebar) sidebar.style.display = 'none';
-
-            const bottomNav = document.getElementById('bottom-nav');
-            if (bottomNav) bottomNav.style.display = 'none';
+            if (sidebar) sidebar.style.display = 'flex'; 
         }
     }
 }
