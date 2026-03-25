@@ -222,11 +222,7 @@ Current mode: {{MODE}}`;
         <div class="ai-tutor-wrapper fade-in">
             <!-- Chat Card (Now standalone as requested) -->
             <div class="glass-card tutor-chat-card" style="padding:0; overflow:hidden;">
-                <div style="padding: 12px 24px; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.15);">
-                    <div style="display:flex; align-items:center; gap:8px;">
-                        <div class="tutor-live-badge">LIVE</div>
-                        <span style="font-size:12px; color:rgba(255,255,255,0.5); font-weight:600;">Llama 3.3 70B</span>
-                    </div>
+                <div style="padding: 12px 24px; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: flex-end; align-items: center; background: rgba(0,0,0,0.15);">
                     <button class="tutor-clear-btn" onclick="window._tutorView && window._tutorView.clearChat()" title="Reset session" style="width: 32px; height: 32px; font-size: 16px; border-radius: 8px;">
                         <i class='bx bx-refresh'></i>
                     </button>
@@ -237,15 +233,7 @@ Current mode: {{MODE}}`;
                     ${this.messages.length === 0 ? this.renderWelcome() : this.messages.map(m => this.renderMessage(m)).join('')}
                 </div>
 
-                <!-- Starter Prompts (only when empty) -->
-                ${this.messages.length === 0 ? `
-                <div id="tutor-starters" class="tutor-starters">
-                    ${(this.starterPrompts[this.currentMode] || []).map(p => `
-                        <button class="tutor-starter-chip" onclick="window._tutorView && window._tutorView.sendStarter('${p.replace(/'/g, "\\'")}')">
-                            ${p}
-                        </button>
-                    `).join('')}
-                </div>` : ''}
+                </div>
 
                 <!-- Input Area -->
                 <div class="tutor-input-area" style="position: relative; z-index: 100;">
@@ -275,14 +263,13 @@ Current mode: {{MODE}}`;
     }
 
     renderWelcome() {
-        const mode = this.modes[this.currentMode];
         return `
         <div class="tutor-welcome">
             <div class="tutor-welcome-icon">
                 <i class='bx bx-bot'></i>
             </div>
-            <h3>Hallo! Ich bin Clifford AI Tutor 👋</h3>
-            <p>Your AI German tutor. How can I help you today?</p>
+            <h3 style="font-size: 24px; font-weight: 700;">hallo! ich bin clifford ai tutor</h3>
+            <p style="font-size: 18px; color: var(--text-secondary);">your ai german tutor. how can i help you</p>
         </div>
         `;
     }
