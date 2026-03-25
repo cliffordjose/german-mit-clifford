@@ -3,7 +3,7 @@
 
 const firebaseConfig = {
     // Decode obfuscated & split key to bypass GitHub secret scanning
-    apiKey: atob("QUl6YVN5RHlS" + "TEo1cmFhcElB" + "T1N0UklnaWRt" + "ZUs4VGFBNHFH" + "SnFn"),
+    apiKey: atob("QUl6YVN5RHlS" + "TEo1cmFhcElB" + "OVN0UklnaWRt" + "ZUs4VGFBNHFH" + "SnFn"),
     authDomain: "german-mit-clifford.firebaseapp.com",
     projectId: "german-mit-clifford",
     storageBucket: "german-mit-clifford.firebasestorage.app",
