@@ -311,12 +311,19 @@ a {
 }
 
 .mobile-menu-btn {
-    display: none;
+    display: flex; /* Show always as requested */
     background: none;
     border: none;
     color: white;
     font-size: 28px;
     cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    margin-right: 15px;
 }
 
 .header-actions {
