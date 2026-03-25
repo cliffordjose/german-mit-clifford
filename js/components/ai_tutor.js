@@ -197,24 +197,21 @@ Current mode: {{MODE}}`;
             }
 
             @media (max-width: 768px) {
-                .ai-tutor-wrapper { gap: 0; padding: 0; height: calc(100vh - 140px); }
-                .tutor-header { border-radius: 0; border-top: none; border-left: none; border-right: none; padding: 16px; }
-                .tutor-messages-area { padding: 16px; gap: 14px; }
+                .ai-tutor-wrapper { height: calc(100vh - 150px); padding-bottom: 70px; }
+                .tutor-header { padding: 16px; border-radius: 0; }
+                .tutor-messages-area { padding: 12px; gap: 16px; }
                 .tutor-msg { max-width: 95%; gap: 8px; }
-                .tutor-msg-avatar { width: 30px; height: 30px; font-size: 16px; }
+                .tutor-msg-avatar { width: 32px; height: 32px; font-size: 16px; }
                 .tutor-msg-bubble { padding: 12px 16px; font-size: 14px; border-radius: 16px; }
-                .tutor-input-area { padding: 12px 14px; }
-                .tutor-input-row { gap: 8px; padding-left: 14px; padding: 4px 4px 4px 14px; }
-                .tutor-textarea { font-size: 14px; padding: 10px 0; }
-                .tutor-send-btn, .tutor-mic-btn { width: 40px; height: 40px; font-size: 18px; border-radius: 12px; }
-                .tutor-welcome-icon { font-size: 48px; }
+                .tutor-input-area { position: sticky; bottom: 0; z-index: 1000; padding: 10px 12px; background: rgba(10, 10, 15, 0.98); }
+                .tutor-input-row { padding-left: 16px; border-radius: 30px; gap: 6px; }
+                .tutor-textarea { font-size: 16px; padding: 10px 0; }
+                .tutor-send-btn, .tutor-mic-btn { width: 42px; height: 42px; font-size: 20px; border-radius: 50%; }
                 .tutor-welcome h3 { font-size: 22px !important; }
                 .tutor-welcome p { font-size: 14px !important; }
-                .tutor-welcome { padding: 24px 16px; }
-                .tutor-starters { padding: 0 14px 14px; gap: 8px; }
-                .tutor-starter-chip { padding: 7px 12px; font-size: 12px; }
-                .tutor-input-hint { padding: 6px 4px 0; font-size: 11px; }
-                .tutor-input-hint kbd { display: none; }
+                .tutor-starters { padding: 0 10px 10px; gap: 6px; }
+                .tutor-starter-chip { padding: 6px 12px; font-size: 12px; }
+                .tutor-input-hint { display: none; }
             }
             
             @media (max-width: 600px) {
@@ -251,8 +248,8 @@ Current mode: {{MODE}}`;
                 </div>` : ''}
 
                 <!-- Input Area -->
-                <div class="tutor-input-area">
-                    <div class="tutor-input-row">
+                <div class="tutor-input-area" style="position: relative; z-index: 100;">
+                    <div class="tutor-input-row" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);">
                         <textarea 
                             id="tutor-input" 
                             class="tutor-textarea" 
@@ -260,17 +257,16 @@ Current mode: {{MODE}}`;
                             rows="1"
                             onkeydown="window._tutorView && window._tutorView.handleKey(event)"
                             oninput="this.style.height='auto'; this.style.height=Math.min(this.scrollHeight,120)+'px'"
+                            style="pointer-events: auto; position: relative; z-index: 2;"
                         ></textarea>
-                        <button id="tutor-mic-btn" class="tutor-mic-btn" onclick="window._tutorView && window._tutorView.toggleSpeech()" title="Click to Speak (Microphone)">
-                            <i class='bx bx-microphone'></i>
-                        </button>
-                        <button id="tutor-send-btn" class="tutor-send-btn" onclick="window._tutorView && window._tutorView.sendMessage()">
-                            <i class='bx bx-send'></i>
-                        </button>
-                    </div>
-                    <div class="tutor-input-hint">
-                        <span><kbd>Enter</kbd> to send · <kbd>Shift+Enter</kbd> for new line</span>
-                        <span style="color:var(--accent-gold);">✨ Ask anything about German</span>
+                        <div style="display: flex; gap: 8px; align-items: center; padding-right: 4px;">
+                            <button id="tutor-mic-btn" class="tutor-mic-btn" onclick="window._tutorView && window._tutorView.toggleSpeech()" title="Voice Input" style="position: relative; z-index: 3;">
+                                <i class='bx bx-microphone'></i>
+                            </button>
+                            <button id="tutor-send-btn" class="tutor-send-btn" onclick="window._tutorView && window._tutorView.sendMessage()" title="Send Message" style="position: relative; z-index: 3;">
+                                <i class='bx bx-send'></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
