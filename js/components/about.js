@@ -9,8 +9,8 @@ class AboutView {
                 .founder-title { font-size: 16px; color: var(--accent-gold); margin-bottom: 24px; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; }
                 .founder-bio { font-size: 17px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 24px; }
                 .founder-photo-wrapper { position: relative; width: 220px; height: 220px; flex-shrink: 0; }
-                .founder-photo { width: 100%; height: 100%; border-radius: 24px; background: #12121c; overflow: hidden; display: flex; justify-content: center; align-items: center; box-shadow: var(--shadow-glow); border: 2px solid rgba(255,255,255,0.1); transform: rotate(-3deg); transition: all 0.5s var(--transition-main); }
-                .about-card:hover .founder-photo { transform: rotate(0deg) scale(1.05); border-color: var(--accent-gold); }
+                .founder-photo { width: 100%; height: 100%; border-radius: 24px; background: #12121c; overflow: hidden; display: flex; justify-content: center; align-items: center; border: 1px solid rgba(255,255,255,0.1); transition: all 0.5s var(--transition-main); }
+                .about-card:hover .founder-photo { transform: scale(1.02); border-color: var(--accent-gold); }
                 
                 .about-card { display: flex; flex-direction: row; gap: 48px; align-items: center; margin-bottom: 48px; padding: 48px !important; overflow: hidden; position: relative; text-align: left; }
                 
@@ -47,10 +47,7 @@ class AboutView {
                 <!-- Founder Spotlight -->
                 <div class="glass-card about-card premium-hover">
                     <div class="founder-photo-wrapper">
-                        <div class="founder-photo">
-                            <img src="img/profile.jpg" alt="Clifford Jose Nediyaparambil" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\\'bx bx-user\\' style=\\'font-size:64px; color:var(--accent-gold);\\'></i>';" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
-                        <div style="position: absolute; -z-index: 1; inset: -10px; background: var(--gradient-brand); opacity: 0.2; filter: blur(20px); border-radius: 30px;"></div>
                     </div>
                     
                     <div style="flex: 1;">

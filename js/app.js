@@ -167,7 +167,7 @@ class AppRouter {
 
         
         // Sync Browser Tab (tap) as requested
-        document.title = isAITutor ? 'German mit Clifford | AI Master' : 'German mit Clifford | Master German A1-C2';
+        document.title = isAITutor ? 'Clifford AI Tutor | AI Master' : 'German mit Clifford | Master German A1-C2';
 
         if (typeof AppState !== 'undefined' && AppState.activeUserId) {
             // Update Header Stats
