@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>German mit Clifford | Master German A1-C2</title>
+    <meta name="description"
+        content="A premium, free web application to learn German from A1 to C2 with comprehensive grammar explanations and vocabulary.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/index.css?v=3">
+</head>
+
+<body>
+    <div id="app-shell" class="app-shell">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="assets/logo.png" alt="Logo"
+                        style="width:40px; height:40px; border-radius:50%; margin-right:12px;">
+                    <span class="logo-text">German<br><span>mit Clifford</span></span>
+                </div>
+                <button class="mobile-toggle" id="mobile-toggle"><i class='bx bx-x'></i></button>
+            </div>
+
+            <div class="nav-links">
+                <a href="#/" class="nav-link" data-link><i class='bx bx-home-alt'></i> Dashboard</a>
+                <div class="nav-group">Learning</div>
+                <a href="#/grammar" class="nav-link" data-link><i class='bx bx-book-open'></i> Grammar (A1-C2)</a>
+                <a href="#/vocabulary" class="nav-link" data-link><i class='bx bx-layer'></i> Vocabulary Flashcards</a>
+                <a href="#/wordlist" class="nav-link" data-link><i class='bx bx-list-ul'></i> Word List (10k)</a>
+                <a href="#/quizzes" class="nav-link" data-link><i class='bx bx-check-shield'></i> Practice Quizzes</a>
+                <a href="#/pronunciation" class="nav-link" data-link><i class='bx bx-microphone'></i> AI
+                    Pronunciation</a>
+                <a href="#/ai-tutor" class="nav-link" data-link><i class='bx bx-bot'></i> Clifford AI Tutor <span
+                        style="font-size:10px; background:var(--gradient-brand); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:800; margin-left:4px;">NEW</span></a>
+                <div class="nav-group">App</div>
+                <a href="#/about" class="nav-link" data-link><i class='bx bx-group'></i> About Us</a>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="progress-card">
+                    <div class="progress-title">Overall Progress</div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" style="width: 12%;"></div>
+                    </div>
+                    <div class="progress-text">Level A1 (12%)</div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-header">
+                <button class="mobile-menu-btn" id="mobile-menu-btn" style="z-index: 100;"><i
+                        class='bx bx-menu'></i></button>
+
+                <!-- Feature Title in Global Header -->
+                <div class="header-title" id="global-feature-title" style="margin-left: 20px; font-weight: 800; font-size: 20px; color: white; display: none; align-items: center; gap: 8px;">
+                    <span class="animate-character-reveal" style="background: linear-gradient(to right, #fff, var(--accent-gold), var(--accent-red), #fff); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: shimmer 4s linear infinite; font-family: var(--font-heading);">Clifford AI Tutor</span>
+                </div>
+
+                <div class="header-actions">
+                    <button class="icon-btn tooltip" data-tooltip="Hearts (Lives)"
+                        style="color:var(--accent-red); font-weight:bold;">
+                        <i class='bx bxs-heart'></i> <span id="header-heart-val">5</span>
+                    </button>
+                    <button class="icon-btn tooltip" data-tooltip="Daily Streak"
+                        style="color:#ff9900; font-weight:bold;">
+                        <i class='bx bxs-flame streak-icon'></i> <span id="header-streak-val">0</span>
+                    </button>
+                    <a href="#/settings" class="icon-btn tooltip" data-tooltip="Settings"><i class='bx bx-cog'></i></a>
+                    <a href="#/profile" class="user-avatar" id="header-avatar" style="text-decoration: none;">?</a>
+                </div>
+            </header>
+
+            <!-- Dynamic Content Injected Here -->
+            <div id="content-area" class="content-area"></div>
+        </main>
+
+    </div>
+
+    <!-- Configuration -->
+    <script>
+        // Gemini API Key for AI Pronunciation Coach
+        window.GEMINI_API_KEY = "YOUR_GEMINI_API_KEY_HERE";
+        // Groq API Key for AI Tutor (Llama 3)
+        window.GROQ_API_KEY = "YOUR_GROQ_API_KEY_HERE";
+    </script>
+
+    <!-- Data: Grammar Levels (must load before grammar.js) -->
+    <script src="js/data/grammar_a1.js"></script>
+    <script src="js/data/grammar_a2.js"></script>
+    <script src="js/data/grammar_b1.js"></script>
+    <script src="js/data/grammar_b2.js"></script>
+    <script src="js/data/grammar_c1c2.js"></script>
+    <script src="js/data/grammar.js"></script>
+    <!-- Data: Vocabulary Levels (must load before vocabulary.js) -->
+    <script src="js/data/vocab_a1a2.js"></script>
+    <script src="js/data/vocab_b1b2.js"></script>
+    <script src="js/data/vocab_c1c2.js"></script>
+    <script src="js/data/vocab_expand_a.js"></script>
+    <script src="js/data/vocab_expand_b.js"></script>
+    <script src="js/data/vocab_expand_c.js"></script>
+    <script src="js/data/vocab_mega_1.js"></script>
+    <script src="js/data/vocab_mega_2.js"></script>
+    <script src="js/data/vocab_mega_3.js"></script>
+    <script src="js/data/vocab_mega_4.js"></script>
+    <script src="js/data/vocab_mega_5.js"></script>
+    <script src="js/data/vocab_mega_6.js"></script>
+    <script src="js/data/vocab_mega_7.js"></script>
+    <script src="js/data/vocab_mega_8.js"></script>
+    <script src="js/data/vocab_mega_9.js"></script>
+    <script src="js/data/vocab_mega_10.js"></script>
+    <script src="js/data/vocab_mega_11.js"></script>
+    <script src="js/data/vocab_mega_12.js"></script>
+    <script src="js/data/vocab_mega_13.js"></script>
+    <script src="js/data/vocab_mega_14.js"></script>
+    <script src="js/data/vocab_mega_15.js"></script>
+    <script src="js/data/vocab_mega_16.js"></script>
+    <script src="js/data/vocab_mega_17.js"></script>
+    <script src="js/data/vocab_mega_18.js"></script>
+    <script src="js/data/vocab_mega_19.js"></script>
+    <script src="js/data/vocab_mega_20.js"></script>
+    <script src="js/data/vocab_mega_21.js"></script>
+    <script src="js/data/vocab_mega_22.js"></script>
+    <script src="js/data/vocab_mega_23.js"></script>
+    <script src="js/data/vocab_mega_24.js"></script>
+    <script src="js/data/vocab_mega_25.js"></script>
+    <script src="js/data/vocab_mega_26.js"></script>
+    <script src="js/data/vocab_mega_27.js"></script>
+    <script src="js/data/vocab_mega_28.js"></script>
+    <script src="js/data/vocab_mega_29.js"></script>
+    <script src="js/data/vocab_mega_30.js"></script>
+    <script src="js/data/vocab_mega_31.js"></script>
+    <script src="js/data/vocab_superb.js"></script>
+    <script src="js/data/vocabulary.js?v=3"></script>
+    <script src="js/data/quiz_data.js?v=3"></script>
+
+    <!-- Firebase SDK (compat version for vanilla JS) -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+    <!-- Services -->
+    <script src="js/services/firebase.js"></script>
+    <script src="js/services/state.js?v=6"></script>
+
+    <!-- Components -->
+    <script src="js/components/home.js?v=6"></script>
+    <script src="js/components/grammar.js?v=6"></script>
+    <script src="js/components/vocabulary.js?v=8"></script>
+    <script src="js/components/wordlist.js?v=7"></script>
+    <script src="js/components/quiz.js?v=6"></script>
+    <script src="js/components/about.js?v=14"></script>
+    <script src="js/components/profile.js?v=7"></script>
+    <script src="js/components/settings.js?v=6"></script>
+    <script src="js/components/login.js?v=10"></script>
+    <script src="js/components/ai_coach.js"></script>
+    <script src="js/components/ai_tutor.js"></script>
+    <script src="js/components/pronunciation.js?v=1"></script>
+    <!-- App Router -->
+    <script src="js/app.js?v=7"></script>
+
+</body>
+
+</html>

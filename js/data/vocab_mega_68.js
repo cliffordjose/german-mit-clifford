@@ -1,0 +1,53 @@
+// vocab_mega_68.js — Mega Expansion Part 68 (200+ Food & Drink Part 3)
+
+const vocabMega68 = [
+    { category: "Fruits & Berries (Deep)", words: [
+        { de: "Apfel", en: "apple", article: "der", type: "noun" },
+        { de: "Birne", en: "pear", article: "die", type: "noun" },
+        { de: "Banane", en: "banana", article: "die", type: "noun" },
+        { de: "Orange / Apfelsine", en: "orange", article: "die", type: "noun" },
+        { de: "Zitrone", en: "lemon", article: "die", type: "noun" },
+        { de: "Limette", en: "lime", article: "die", type: "noun" },
+        { de: "Grapefruit / Pampelmuse", en: "grapefruit", article: "die", type: "noun" },
+        { de: "Mandarine", en: "mandarin", article: "die", type: "noun" },
+        { de: "Traube / Weintraube", en: "grape", article: "die", type: "noun" },
+        { de: "Erdbeere", en: "strawberry", article: "die", type: "noun" },
+        { de: "Himbeere", en: "raspberry", article: "die", type: "noun" },
+        { de: "Brombeere", en: "blackberry", article: "die", type: "noun" },
+        { de: "Heidelbeere / Blaubeere", en: "blueberry", article: "die", type: "noun" },
+        { de: "Johannisbeere", en: "currant", article: "die", type: "noun" },
+        { de: "Stachelbeere", en: "gooseberry", article: "die", type: "noun" },
+        { de: "Kirsche", en: "cherry", article: "die", type: "noun" },
+        { de: "Pflaume", en: "plum", article: "die", type: "noun" },
+        { de: "Pfirsich", en: "peach", article: "der", type: "noun" },
+        { de: "Aprikose / Marille", en: "apricot", article: "die", type: "noun" },
+        { de: "Nektarine", en: "nectarine", article: "die", type: "noun" },
+        { de: "Ananas", en: "pineapple", article: "die", type: "noun" },
+        { de: "Melone", en: "melon", article: "die", type: "noun" },
+        { de: "Wassermelone", en: "watermelon", article: "die", type: "noun" },
+        { de: "Mango", en: "mango", article: "die", type: "noun" },
+        { de: "Papaya", en: "papaya", article: "die", type: "noun" },
+        { de: "Kiwi", en: "kiwi", article: "die", type: "noun" },
+        { de: "Granatapfel", en: "pomegranate", article: "der", type: "noun" },
+        { de: "Feige", en: "fig", article: "die", type: "noun" },
+        { de: "Dattel", en: "date (fruit)", article: "die", type: "noun" },
+        { de: "Avocado", en: "avocado", article: "die", type: "noun" }
+    ]},
+    { category: "Drinks & Beverages (Advanced)", words: [
+        { de: "Wasser", en: "water", article: "das", type: "noun" },
+        { de: "Mineralwasser / Leitungswasser", en: "mineral water / tap water", article: "das / das", type: "noun" },
+        { de: "Saft / Fruchtsaft", en: "juice / fruit juice", article: "der", type: "noun" },
+        { de: "Limonade / Limo", en: "lemonade / soda", article: "die", type: "noun" },
+        { de: "Eistee", en: "iced tea", article: "der", type: "noun" },
+        { de: "Kaffee", en: "coffee", article: "der", type: "noun" },
+        { de: "Espresso", en: "espresso", article: "der", type: "noun" },
+        { de: "Cappuccino", en: "cappuccino", article: "der", type: "noun" },
+        { de: "Tee / Kräutertee", en: "tea / herbal tea", article: "der", type: "noun" },
+        { de: "Milch", en: "milk", article: "die", type: "noun" },
+        { de: "Kakao / Heiße Schokolade", en: "cocoa / hot chocolate", article: "der / die", type: "noun" },
+        { de: "Bier / Weizenbier", en: "beer / wheat beer", article: "das / das", type: "noun" },
+        { de: "Wein / Rotwein / Weißwein", en: "wine / red wine / white wine", article: "der", type: "noun" },
+        { de: "Sekt / Champagner", en: "sparkling wine / champagne", article: "der / der", type: "noun" },
+        { de: "Schnaps / Likör", en: "schnapps / liqueur", article: "der / der", type: "noun" }
+    ]}
+];

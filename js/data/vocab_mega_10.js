@@ -1,0 +1,53 @@
+// vocab_mega_10.js — Mega Expansion Part 10 (Phrases & Idioms)
+
+const vocabMega10 = [
+    { category: "Common Phrases (A1)", words: [
+        { de: "Guten Tag", en: "Good day", article: null, type: "phrase" },
+        { de: "Guten Morgen", en: "Good morning", article: null, type: "phrase" },
+        { de: "Guten Abend", en: "Good evening", article: null, type: "phrase" },
+        { de: "Gute Nacht", en: "Good night", article: null, type: "phrase" },
+        { de: "Hallo", en: "Hello", article: null, type: "phrase" },
+        { de: "Tschüss", en: "Bye", article: null, type: "phrase" },
+        { de: "Auf Wiedersehen", en: "Goodbye", article: null, type: "phrase" },
+        { de: "Bitte", en: "Please / You're welcome", article: null, type: "phrase" },
+        { de: "Danke", en: "Thank you", article: null, type: "phrase" },
+        { de: "Vielen Dank", en: "Thank you very much", article: null, type: "phrase" },
+        { de: "Entschuldigung", en: "Excuse me / Sorry", article: null, type: "phrase" },
+        { de: "Es tut mir leid", en: "I'm sorry", article: null, type: "phrase" },
+        { de: "Kein Problem", en: "No problem", article: null, type: "phrase" },
+        { de: "Gern geschehen", en: "My pleasure / You're welcome", article: null, type: "phrase" },
+        { de: "Wie geht es dir?", en: "How are you? (informal)", article: null, type: "phrase" },
+        { de: "Wie geht es Ihnen?", en: "How are you? (formal)", article: null, type: "phrase" },
+        { de: "Mir geht es gut", en: "I am fine", article: null, type: "phrase" },
+        { de: "Und dir?", en: "And you?", article: null, type: "phrase" },
+        { de: "Wie heißt du?", en: "What's your name?", article: null, type: "phrase" },
+        { de: "Ich heiße...", en: "My name is...", article: null, type: "phrase" },
+        { de: "Woher kommst du?", en: "Where are you from?", article: null, type: "phrase" },
+        { de: "Ich komme aus...", en: "I come from...", article: null, type: "phrase" },
+        { de: "Wo wohnst du?", en: "Where do you live?", article: null, type: "phrase" },
+        { de: "Ich wohne in...", en: "I live in...", article: null, type: "phrase" },
+        { de: "Freut mich", en: "Nice to meet you", article: null, type: "phrase" }
+    ]},
+    { category: "Idiomatic Expressions (Intermediate)", words: [
+        { de: "Daumen drücken", en: "to cross fingers / keep thumbs pressed", article: null, type: "phrase" },
+        { de: "Zwei Fliegen mit einer Klappe schlagen", en: "to kill two birds with one stone", article: null, type: "phrase" },
+        { de: "Tomaten auf den Augen haben", en: "to be oblivious / not seeing the obvious", article: null, type: "phrase" },
+        { de: "Den Faden verlieren", en: "to lose the thread", article: null, type: "phrase" },
+        { de: "Auf großem Fuß leben", en: "to live in high style", article: null, type: "phrase" },
+        { de: "Ins kalte Wasser springen", en: "to jump into the deep end", article: null, type: "phrase" },
+        { de: "Den Gürtel enger schnallen", en: "to tighten one's belt", article: null, type: "phrase" },
+        { de: "Mit dem Feuer spielen", en: "to play with fire", article: null, type: "phrase" },
+        { de: "Die Flinte ins Korn werfen", en: "to throw in the towel", article: null, type: "phrase" },
+        { de: "Schwein haben", article: null, en: "to be lucky", type: "phrase" },
+        { de: "Einen Vogel haben", en: "to be crazy", article: null, type: "phrase" },
+        { de: "Blau machen", en: "to skip work/school", article: null, type: "phrase" },
+        { de: "Ins Schwarze treffen", en: "to hit the bullseye", article: null, type: "phrase" },
+        { de: "Jemandem auf den Keks gehen", en: "to get on someone's nerves", article: null, type: "phrase" },
+        { de: "Unter die Lupe nehmen", en: "to examine closely", article: null, type: "phrase" },
+        { de: "Auf dem Schlauch stehen", en: "to be at a loss / not understand", article: null, type: "phrase" },
+        { de: "Katz und Maus spielen", en: "to play cat and mouse", article: null, type: "phrase" },
+        { de: "Einen Korb geben", en: "to reject someone", article: null, type: "phrase" },
+        { de: "Da liegt der Hund begraben", en: "that's the heart of the matter", article: null, type: "phrase" },
+        { de: "Krokodilstränen weinen", en: "to cry crocodile tears", article: null, type: "phrase" }
+    ]}
+];

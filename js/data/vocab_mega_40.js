@@ -1,0 +1,53 @@
+// vocab_mega_40.js — Mega Expansion Part 40 (300+ General Tools & Hardware)
+
+const vocabMega40 = [
+    { category: "Hand Tools (Deep Dive)", words: [
+        { de: "Schraubendreher", en: "screwdriver", article: "der", type: "noun" },
+        { de: "Schlitzschraubendreher", en: "slotted screwdriver", article: "der", type: "noun" },
+        { de: "Kreuzschraubendreher", en: "Phillips screwdriver", article: "der", type: "noun" },
+        { de: "Hammer", en: "hammer", article: "der", type: "noun" },
+        { de: "Vorschlaghammer", en: "sledgehammer", article: "der", type: "noun" },
+        { de: "Gummihammer", en: "rubber mallet", article: "der", type: "noun" },
+        { de: "Zange", en: "pliers", article: "die", type: "noun" },
+        { de: "Kombizange", en: "combination pliers", article: "die", type: "noun" },
+        { de: "Spitzzange", en: "needle-nose pliers", article: "die", type: "noun" },
+        { de: "Seitenschneider", en: "side cutter", article: "der", type: "noun" },
+        { de: "Rohrzange", en: "pipe wrench", article: "die", type: "noun" },
+        { de: "Engländer / Rollgabelschlüssel", en: "adjustable wrench / monkey wrench", article: "der", type: "noun" },
+        { de: "Maulschlüssel", en: "open-ended wrench", article: "der", type: "noun" },
+        { de: "Ringschlüssel", en: "box-end wrench", article: "der", type: "noun" },
+        { de: "Inbusschlüssel / Sechskantschlüssel", en: "Allen key / hex key", article: "der", type: "noun" },
+        { de: "Feile", en: "file (tool)", article: "die", type: "noun" },
+        { de: "Raspel", en: "rasp", article: "die", type: "noun" },
+        { de: "Säge", en: "saw", article: "die", type: "noun" },
+        { de: "Fuchsschwanz", en: "hand saw / handsaw", article: "der", type: "noun" },
+        { de: "Metallsäge", en: "hacksaw", article: "die", type: "noun" },
+        { de: "Stichsäge", en: "jigsaw", article: "die", type: "noun" },
+        { de: "Hobel", en: "plane / planer", article: "der", type: "noun" },
+        { de: "Beitelt / Stechbeitel", en: "chisel", article: "der", type: "noun" },
+        { de: "Körner", en: "center punch", article: "der", type: "noun" },
+        { de: "Meißel", en: "cold chisel", article: "der", type: "noun" },
+        { de: "Wasserwaage", en: "spirit level / bubble level", article: "die", type: "noun" },
+        { de: "Zollstock / Gliedmaßstab", en: "folding ruler", article: "der", type: "noun" },
+        { de: "Maßband", en: "measuring tape", article: "das", type: "noun" },
+        { de: "Schublehre / Messschieber", en: "caliper / vernier caliper", article: "die", type: "noun" },
+        { de: "Winkelmaß", en: "square / try square", article: "das", type: "noun" }
+    ]},
+    { category: "Power Tools & Machinery", words: [
+        { de: "Bohrmaschine", en: "drill", article: "die", type: "noun" },
+        { de: "Akkuschrauber", en: "cordless screwdriver / drill", article: "der", type: "noun" },
+        { de: "Schlagbohrmaschine", en: "hammer drill", article: "die", type: "noun" },
+        { de: "Trennschleifer / Flex", en: "angle grinder", article: "der", type: "noun" },
+        { de: "Schwingschleifer", en: "orbital sander", article: "der", type: "noun" },
+        { de: "Heißklebepistole", en: "hot glue gun", article: "die", type: "noun" },
+        { de: "Lötkolben", en: "soldering iron", article: "der", type: "noun" },
+        { de: "Tischkreissäge", en: "table saw", article: "die", type: "noun" },
+        { de: "Kappsäge", en: "miter saw", article: "die", type: "noun" },
+        { de: "Drehmaschine", en: "lathe", article: "die", type: "noun" },
+        { de: "Fräsmaschine", en: "milling machine", article: "die", type: "noun" },
+        { de: "Schleifmaschine", en: "grinding machine", article: "die", type: "noun" },
+        { de: "Kompressor", en: "compressor", article: "der", type: "noun" },
+        { de: "Stromerzeuger / Aggregat", en: "generator", article: "der / das", type: "noun" },
+        { de: "Hebebühne", en: "lifting platform / hoist", article: "die", type: "noun" }
+    ]}
+];

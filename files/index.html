@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>German mit Clifford | Master German A1-C2</title>
+    <meta name="description"
+        content="A premium, free web application to learn German from A1 to C2 with comprehensive grammar explanations and vocabulary.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/index.css?v=3">
+</head>
+
+<body>
+    <div id="app-shell" class="app-shell">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="assets/logo.png" alt="Logo" style="width:40px; height:40px; border-radius:50%; margin-right:12px;">
+                    <span class="logo-text">German<br><span>mit Clifford</span></span>
+                </div>
+                <button class="mobile-toggle" id="mobile-toggle"><i class='bx bx-x'></i></button>
+            </div>
+
+            <div class="nav-links">
+                <a href="#/" class="nav-link" data-link><i class='bx bx-home-alt'></i> Dashboard</a>
+                <div class="nav-group">Learning</div>
+                <a href="#/grammar" class="nav-link" data-link><i class='bx bx-book-open'></i> Grammar (A1-C2)</a>
+                <a href="#/vocabulary" class="nav-link" data-link><i class='bx bx-layer'></i> Vocabulary Flashcards</a>
+                <a href="#/wordlist" class="nav-link" data-link><i class='bx bx-list-ul'></i> Word List (10k)</a>
+                <a href="#/quizzes" class="nav-link" data-link><i class='bx bx-check-shield'></i> Practice Quizzes</a>
+                <a href="#/pronunciation" class="nav-link" data-link><i class='bx bx-microphone'></i> AI Pronunciation</a>
+                <a href="#/ai-tutor" class="nav-link" data-link><i class='bx bx-bot'></i> Clifford AI Tutor <span style="font-size:10px; background:linear-gradient(135deg,#ff3333,#ffcc00); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:800; margin-left:4px;">NEW</span></a>
+                <div class="nav-group">App</div>
+                <a href="#/about" class="nav-link" data-link><i class='bx bx-group'></i> About Us</a>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="progress-card">
+                    <div class="progress-title">Overall Progress</div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" style="width: 12%;"></div>
+                    </div>
+                    <div class="progress-text">Level A1 (12%)</div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-header">
+                <button class="mobile-menu-btn" id="mobile-menu-btn" style="z-index: 100;"><i class='bx bx-menu'></i></button>
+
+                <div class="header-actions">
+                    <button class="icon-btn tooltip" data-tooltip="Hearts (Lives)" style="color:#ff3366; font-weight:bold;">
+                        <i class='bx bxs-heart'></i> <span id="header-heart-val">5</span>
+                    </button>
+                    <button class="icon-btn tooltip" data-tooltip="Daily Streak" style="color:#ff9900; font-weight:bold;">
+                        <i class='bx bxs-flame streak-icon'></i> <span id="header-streak-val">0</span>
+                    </button>
+                    <a href="#/settings" class="icon-btn tooltip" data-tooltip="Settings"><i class='bx bx-cog'></i></a>
+                    <a href="#/profile" class="user-avatar" id="header-avatar" style="text-decoration: none;">?</a>
+                </div>
+            </header>
+
+            <!-- Dynamic Content Injected Here -->
+            <div id="content-area" class="content-area"></div>
+        </main>
+
+        <!-- Mobile Bottom Navigation -->
+        <nav class="bottom-nav" id="bottom-nav">
+            <a href="#/" class="bottom-nav-link" data-link><i class='bx bx-home-alt'></i><span>Home</span></a>
+            <a href="#/grammar" class="bottom-nav-link" data-link><i class='bx bx-book-open'></i><span>Grammar</span></a>
+            <a href="#/vocabulary" class="bottom-nav-link" data-link><i class='bx bx-layer'></i><span>Vocab</span></a>
+            <a href="#/quizzes" class="bottom-nav-link" data-link><i class='bx bx-joystick'></i><span>Quizzes</span></a>
+            <a href="#/ai-tutor" class="bottom-nav-link" data-link><i class='bx bx-bot'></i><span>AI Tutor</span></a>
+            <a href="#/profile" class="bottom-nav-link" data-link><i class='bx bx-user'></i><span>Profile</span></a>
+        </nav>
+
+    </div>
+
+    <!-- Configuration -->
+    <script>
+        // Gemini API Key for AI Pronunciation Coach
+        window.GEMINI_API_KEY = "AIzaSyBfba4rkPA_VojLORzUFYSZkgnxfm1hVpo";
+    </script>
+
+    <!-- Data: Grammar Levels (must load before grammar.js) -->
+    <script src="js/data/grammar_a1.js"></script>
+    <script src="js/data/grammar_a2.js"></script>
+    <script src="js/data/grammar_b1.js"></script>
+    <script src="js/data/grammar_b2.js"></script>
+    <script src="js/data/grammar_c1c2.js"></script>
+    <script src="js/data/grammar.js"></script>
+    <!-- Data: Vocabulary Levels (must load before vocabulary.js) -->
+    <script src="js/data/vocab_a1a2.js"></script>
+    <script src="js/data/vocab_b1b2.js"></script>
+    <script src="js/data/vocab_c1c2.js"></script>
+    <script src="js/data/vocab_expand_a.js"></script>
+    <script src="js/data/vocab_expand_b.js"></script>
+    <script src="js/data/vocab_expand_c.js"></script>
+    <script src="js/data/vocab_mega_1.js"></script>
+    <script src="js/data/vocab_mega_2.js"></script>
+    <script src="js/data/vocab_mega_3.js"></script>
+    <script src="js/data/vocab_mega_4.js"></script>
+    <script src="js/data/vocab_mega_5.js"></script>
+    <script src="js/data/vocab_mega_6.js"></script>
+    <script src="js/data/vocab_mega_7.js"></script>
+    <script src="js/data/vocab_mega_8.js"></script>
+    <script src="js/data/vocab_mega_9.js"></script>
+    <script src="js/data/vocab_mega_10.js"></script>
+    <script src="js/data/vocab_mega_11.js"></script>
+    <script src="js/data/vocab_mega_12.js"></script>
+    <script src="js/data/vocab_mega_13.js"></script>
+    <script src="js/data/vocab_mega_14.js"></script>
+    <script src="js/data/vocab_mega_15.js"></script>
+    <script src="js/data/vocab_mega_16.js"></script>
+    <script src="js/data/vocab_mega_17.js"></script>
+    <script src="js/data/vocab_mega_18.js"></script>
+    <script src="js/data/vocab_mega_19.js"></script>
+    <script src="js/data/vocab_mega_20.js"></script>
+    <script src="js/data/vocab_mega_21.js"></script>
+    <script src="js/data/vocab_mega_22.js"></script>
+    <script src="js/data/vocab_mega_23.js"></script>
+    <script src="js/data/vocab_mega_24.js"></script>
+    <script src="js/data/vocab_mega_25.js"></script>
+    <script src="js/data/vocab_mega_26.js"></script>
+    <script src="js/data/vocab_mega_27.js"></script>
+    <script src="js/data/vocab_mega_28.js"></script>
+    <script src="js/data/vocab_mega_29.js"></script>
+    <script src="js/data/vocab_mega_30.js"></script>
+    <script src="js/data/vocab_mega_31.js"></script>
+    <script src="js/data/vocab_mega_32.js"></script>
+    <script src="js/data/vocab_mega_33.js"></script>
+    <script src="js/data/vocab_mega_34.js"></script>
+    <script src="js/data/vocab_mega_35.js"></script>
+    <script src="js/data/vocab_mega_36.js"></script>
+    <script src="js/data/vocab_mega_37.js"></script>
+    <script src="js/data/vocab_mega_38.js"></script>
+    <script src="js/data/vocab_mega_39.js"></script>
+    <script src="js/data/vocab_mega_40.js"></script>
+    <script src="js/data/vocab_mega_41.js"></script>
+    <script src="js/data/vocab_mega_42.js"></script>
+    <script src="js/data/vocab_mega_43.js"></script>
+    <script src="js/data/vocab_mega_44.js"></script>
+    <script src="js/data/vocab_mega_45.js"></script>
+    <script src="js/data/vocab_mega_46.js"></script>
+    <script src="js/data/vocab_mega_47.js"></script>
+    <script src="js/data/vocab_mega_48.js"></script>
+    <script src="js/data/vocab_mega_49.js"></script>
+    <script src="js/data/vocab_mega_50.js"></script>
+    <script src="js/data/vocab_mega_51.js"></script>
+    <script src="js/data/vocab_mega_52.js"></script>
+    <script src="js/data/vocab_mega_53.js"></script>
+    <script src="js/data/vocab_mega_54.js"></script>
+    <script src="js/data/vocab_mega_55.js"></script>
+    <script src="js/data/vocab_mega_56.js"></script>
+    <script src="js/data/vocab_mega_57.js"></script>
+    <script src="js/data/vocab_mega_58.js"></script>
+    <script src="js/data/vocab_mega_59.js"></script>
+    <script src="js/data/vocab_mega_60.js"></script>
+    <script src="js/data/vocab_mega_61.js"></script>
+    <script src="js/data/vocab_mega_62.js"></script>
+    <script src="js/data/vocab_mega_63.js"></script>
+    <script src="js/data/vocab_mega_64.js"></script>
+    <script src="js/data/vocab_mega_65.js"></script>
+    <script src="js/data/vocab_mega_66.js"></script>
+    <script src="js/data/vocab_mega_67.js"></script>
+    <script src="js/data/vocab_mega_68.js"></script>
+    <script src="js/data/vocab_mega_69.js"></script>
+    <script src="js/data/vocab_mega_70.js"></script>
+    <script src="js/data/vocab_mega_71.js"></script>
+    <script src="js/data/vocab_mega_72.js"></script>
+    <script src="js/data/vocab_mega_73.js"></script>
+    <script src="js/data/vocab_mega_74.js"></script>
+    <script src="js/data/vocab_mega_75.js"></script>
+    <script src="js/data/vocab_mega_76.js"></script>
+    <script src="js/data/vocab_mega_77.js"></script>
+    <script src="js/data/vocab_mega_78.js"></script>
+    <script src="js/data/vocab_mega_79.js"></script>
+    <script src="js/data/vocab_mega_80.js"></script>
+    <script src="js/data/vocab_mega_81.js"></script>
+    <script src="js/data/vocab_mega_82.js"></script>
+    <script src="js/data/vocab_mega_83.js"></script>
+    <script src="js/data/vocab_mega_84.js"></script>
+    <script src="js/data/vocab_mega_85.js"></script>
+    <script src="js/data/vocab_mega_86.js"></script>
+    <script src="js/data/vocab_mega_87.js"></script>
+    <script src="js/data/vocab_mega_88.js"></script>
+    <script src="js/data/vocab_mega_89.js"></script>
+    <script src="js/data/vocab_mega_90.js"></script>
+    <script src="js/data/vocab_mega_91.js"></script>
+    <script src="js/data/vocab_mega_92.js"></script>
+    <script src="js/data/vocab_mega_93.js"></script>
+    <script src="js/data/vocab_mega_94.js"></script>
+    <script src="js/data/vocab_mega_95.js"></script>
+    <script src="js/data/vocab_mega_96.js"></script>
+    <script src="js/data/vocab_mega_97.js"></script>
+    <script src="js/data/vocab_mega_98.js"></script>
+    <script src="js/data/vocab_mega_99.js"></script>
+    <script src="js/data/vocab_mega_100.js"></script>
+    <script src="js/data/vocab_mega_101.js"></script>
+    <script src="js/data/vocab_mega_102.js"></script>
+    <script src="js/data/vocab_mega_103.js"></script>
+    <script src="js/data/vocab_mega_104.js"></script>
+    <script src="js/data/vocab_mega_105.js"></script>
+    <script src="js/data/vocab_mega_106.js"></script>
+    <script src="js/data/vocab_mega_107.js"></script>
+    <script src="js/data/vocab_mega_108.js"></script>
+    <script src="js/data/vocab_mega_109.js"></script>
+    <script src="js/data/vocab_mega_110.js"></script>
+    <script src="js/data/vocab_mega_111.js"></script>
+    <script src="js/data/vocab_mega_112.js"></script>
+    <script src="js/data/vocab_mega_113.js"></script>
+    <script src="js/data/vocab_mega_114.js"></script>
+    <script src="js/data/vocab_mega_115.js"></script>
+    <script src="js/data/vocab_mega_116.js"></script>
+    <script src="js/data/vocab_mega_117.js"></script>
+    <script src="js/data/vocab_mega_118.js"></script>
+    <script src="js/data/vocab_mega_119.js"></script>
+    <script src="js/data/vocab_mega_120.js"></script>
+    <script src="js/data/vocab_mega_121.js"></script>
+    <script src="js/data/vocab_mega_122.js"></script>
+    <script src="js/data/vocab_mega_123.js"></script>
+    <script src="js/data/vocab_mega_124.js"></script>
+    <script src="js/data/vocab_mega_125.js"></script>
+    <script src="js/data/vocab_mega_126.js"></script>
+    <script src="js/data/vocab_mega_127.js"></script>
+    <script src="js/data/vocab_mega_128.js"></script>
+    <script src="js/data/vocab_mega_129.js"></script>
+    <script src="js/data/vocab_mega_130.js"></script>
+    <script src="js/data/vocab_mega_131.js"></script>
+    <script src="js/data/vocab_mega_132.js"></script>
+    <script src="js/data/vocab_mega_133.js"></script>
+    <script src="js/data/vocab_mega_134.js"></script>
+    <script src="js/data/vocab_mega_135.js"></script>
+    <script src="js/data/vocab_mega_136.js"></script>
+    <script src="js/data/vocab_mega_137.js"></script>
+    <script src="js/data/vocab_mega_138.js"></script>
+    <script src="js/data/vocab_mega_139.js"></script>
+    <script src="js/data/vocab_mega_140.js"></script>
+    <script src="js/data/vocab_mega_141.js"></script>
+    <script src="js/data/vocab_mega_142.js"></script>
+    <script src="js/data/vocab_mega_143.js"></script>
+    <script src="js/data/vocab_mega_144.js"></script>
+    <script src="js/data/vocab_mega_145.js"></script>
+    <script src="js/data/vocab_mega_146.js"></script>
+    <script src="js/data/vocab_mega_147.js"></script>
+    <script src="js/data/vocab_mega_148.js"></script>
+    <script src="js/data/vocab_mega_149.js"></script>
+    <script src="js/data/vocab_mega_150.js"></script>
+    <script src="js/data/vocab_mega_151.js"></script>
+    <script src="js/data/vocab_mega_152.js"></script>
+    <script src="js/data/vocab_mega_153.js"></script>
+    <script src="js/data/vocab_mega_154.js"></script>
+    <script src="js/data/vocab_mega_155.js"></script>
+    <script src="js/data/vocab_mega_156.js"></script>
+    <script src="js/data/vocab_mega_157.js"></script>
+    <script src="js/data/vocab_mega_158.js"></script>
+    <script src="js/data/vocab_mega_159.js"></script>
+    <script src="js/data/vocab_mega_160.js"></script>
+    <script src="js/data/vocab_mega_161.js"></script>
+    <script src="js/data/vocab_mega_162.js"></script>
+    <script src="js/data/vocab_mega_163.js"></script>
+    <script src="js/data/vocab_mega_164.js"></script>
+    <script src="js/data/vocab_mega_165.js"></script>
+    <script src="js/data/vocab_mega_166.js"></script>
+    <script src="js/data/vocab_mega_167.js"></script>
+    <script src="js/data/vocab_mega_168.js"></script>
+    <script src="js/data/vocab_mega_169.js"></script>
+    <script src="js/data/vocab_mega_170.js"></script>
+    <script src="js/data/vocab_mega_171.js"></script>
+    <script src="js/data/vocab_mega_172.js"></script>
+    <script src="js/data/vocab_mega_173.js"></script>
+    <script src="js/data/vocab_mega_174.js"></script>
+    <script src="js/data/vocab_mega_175.js"></script>
+    <script src="js/data/vocab_mega_176.js"></script>
+    <script src="js/data/vocab_superb.js"></script>
+    <script src="js/data/vocabulary.js?v=3"></script>
+    <script src="js/data/quiz_data.js?v=3"></script>
+
+    <!-- Firebase SDK (compat version for vanilla JS) -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+    <!-- Services -->
+    <script src="js/services/firebase.js"></script>
+    <script src="js/services/state.js?v=6"></script>
+
+    <!-- Components -->
+    <script src="js/components/home.js?v=6"></script>
+    <script src="js/components/grammar.js?v=6"></script>
+    <script src="js/components/vocabulary.js?v=8"></script>
+    <script src="js/components/wordlist.js?v=7"></script>
+    <script src="js/components/quiz.js?v=6"></script>
+    <script src="js/components/about.js?v=14"></script>
+    <script src="js/components/profile.js?v=7"></script>
+    <script src="js/components/settings.js?v=6"></script>
+    <script src="js/components/login.js?v=10"></script>
+    <script src="js/components/ai_coach.js"></script>
+    <script src="js/components/ai_tutor.js"></script>
+    <script src="js/components/pronunciation.js?v=1"></script>
+    <!-- App Router -->
+    <script src="js/app.js?v=7"></script>
+
+</body>
+
+</html>
