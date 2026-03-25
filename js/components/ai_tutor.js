@@ -265,10 +265,7 @@ Current mode: {{MODE}}`;
     renderWelcome() {
         return `
         <div class="tutor-welcome">
-            <div class="tutor-welcome-icon">
-                <i class='bx bx-bot'></i>
-            </div>
-            <h3 style="font-size: 24px; font-weight: 700;">hallo! ich bin clifford ai tutor</h3>
+            <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 20px;">hallo! ich bin clifford ai tutor</h3>
             <p style="font-size: 18px; color: var(--text-secondary);">your ai german tutor. how can i help you</p>
         </div>
         `;
