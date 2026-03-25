@@ -162,8 +162,8 @@ Current mode: {{MODE}}`;
             .tutor-starter-chip:hover { border-color: var(--accent-gold); color: white; background: rgba(255, 211, 42, 0.1); transform: translateY(-2px); }
 
             .tutor-input-area { padding: 16px 24px; border-top: var(--border-glass); background: rgba(10, 10, 15, 0.4); backdrop-filter: blur(20px); flex-shrink: 0; }
-            .tutor-input-row { display: flex; gap: 12px; align-items: flex-end; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 6px 6px 6px 18px; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-            .tutor-input-row:focus-within { border-color: var(--accent-gold); background: rgba(255,255,255,0.08); box-shadow: 0 0 30px rgba(255, 211, 42, 0.1); }
+            .tutor-input-row { display: flex; gap: 12px; align-items: flex-end; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 8px 8px 8px 20px; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+            .tutor-input-row:focus-within { border-color: var(--accent-gold); background: rgba(255,255,255,0.07); box-shadow: 0 15px 40px rgba(0,0,0,0.4); transform: translateY(-2px); }
 
             .tutor-textarea { flex: 1; background: transparent; border: none; color: white; font-family: inherit; font-size: 15px; resize: none; padding: 12px 0; outline: none; max-height: 120px; line-height: 1.6; }
             .tutor-textarea::placeholder { color: var(--text-muted); }
@@ -225,9 +225,13 @@ Current mode: {{MODE}}`;
         <div class="ai-tutor-wrapper fade-in">
             <!-- Chat Card (Now standalone as requested) -->
             <div class="glass-card tutor-chat-card" style="padding:0; overflow:hidden;">
-                <div style="padding: 12px 24px; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: flex-end; background: rgba(0,0,0,0.1);">
-                    <button class="tutor-clear-btn" onclick="window._tutorView && window._tutorView.clearChat()" title="Clear chat" style="width: 32px; height: 32px; font-size: 16px; border-radius: 8px;">
-                        <i class='bx bx-trash'></i>
+                <div style="padding: 12px 24px; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.15);">
+                    <div style="display:flex; align-items:center; gap:8px;">
+                        <div class="tutor-live-badge">LIVE</div>
+                        <span style="font-size:12px; color:rgba(255,255,255,0.5); font-weight:600;">Llama 3.3 70B</span>
+                    </div>
+                    <button class="tutor-clear-btn" onclick="window._tutorView && window._tutorView.clearChat()" title="Reset session" style="width: 32px; height: 32px; font-size: 16px; border-radius: 8px;">
+                        <i class='bx bx-refresh'></i>
                     </button>
                 </div>
                 
@@ -444,10 +448,8 @@ Current mode: {{MODE}}`;
             this.conversationHistory.push({ role: 'assistant', content: reply });
             this.rerenderMessages();
 
-            // Voice mode: also speak the reply aloud
-            if (this.voiceMode) {
-                this.speakText(reply);
-            }
+            // AI speaks back the answer automatically
+            this.speakText(reply);
 
         } catch (err) {
             console.error("Chat error:", err);

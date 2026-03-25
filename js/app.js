@@ -163,6 +163,13 @@ class AppRouter {
         if (globalTitle) {
             globalTitle.style.display = isAITutor ? 'flex' : 'none';
         }
+
+        // Hide navigation toggle on the "very first page" (Dashboard)
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        if (mobileMenuBtn) {
+            const isHome = (location.hash === '#/' || location.hash === '' || location.hash === '#');
+            mobileMenuBtn.style.display = isHome ? 'none' : 'flex';
+        }
         
         // Sync Browser Tab (tap) as requested
         document.title = isAITutor ? 'Clifford AI Tutor | Master German A1-C2' : 'German mit Clifford | Master German A1-C2';

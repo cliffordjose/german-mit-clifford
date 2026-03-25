@@ -57,26 +57,24 @@
 
         <!-- Main Content Area -->
         <main class="main-content">
-            <header class="top-header">
-                <button class="mobile-menu-btn" id="mobile-menu-btn" style="z-index: 100;"><i
-                        class='bx bx-menu'></i></button>
-
-                <!-- Feature Title in Global Header -->
-                <div class="header-title" id="global-feature-title" style="margin-left: 20px; font-weight: 800; font-size: 20px; color: white; display: none; align-items: center; gap: 8px;">
+            <header class="top-header" style="justify-content: flex-end; padding: 0 24px;">
+                <!-- Feature Title in Global Header (Aligned to center-left space) -->
+                <div class="header-title" id="global-feature-title" style="flex: 1; margin-left: 0; font-weight: 800; font-size: 20px; color: white; display: none; align-items: center; gap: 8px;">
                     <span class="animate-character-reveal" style="background: linear-gradient(to right, #fff, var(--accent-gold), var(--accent-red), #fff); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: shimmer 4s linear infinite; font-family: var(--font-heading);">Clifford AI Tutor</span>
                 </div>
 
-                <div class="header-actions">
-                    <button class="icon-btn tooltip" data-tooltip="Hearts (Lives)"
-                        style="color:var(--accent-red); font-weight:bold;">
+                <div class="header-actions" style="gap: 12px;">
+                    <button class="icon-btn tooltip" data-tooltip="Hearts (Lives)" style="color:var(--accent-red); font-weight:bold;">
                         <i class='bx bxs-heart'></i> <span id="header-heart-val">5</span>
                     </button>
-                    <button class="icon-btn tooltip" data-tooltip="Daily Streak"
-                        style="color:#ff9900; font-weight:bold;">
+                    <button class="icon-btn tooltip" data-tooltip="Daily Streak" style="color:#ff9900; font-weight:bold;">
                         <i class='bx bxs-flame streak-icon'></i> <span id="header-streak-val">0</span>
                     </button>
                     <a href="#/settings" class="icon-btn tooltip" data-tooltip="Settings"><i class='bx bx-cog'></i></a>
                     <a href="#/profile" class="user-avatar" id="header-avatar" style="text-decoration: none;">?</a>
+                    
+                    <!-- Hamburger Menu moved to the right cluster -->
+                    <button class="mobile-menu-btn" id="mobile-menu-btn" style="z-index: 100; margin-left: 8px;"><i class='bx bx-menu'></i></button>
                 </div>
             </header>
 
